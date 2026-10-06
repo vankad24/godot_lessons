@@ -9,7 +9,7 @@ var rand = RandomNumberGenerator.new()
 @onready var window = get_parent().get_window()
 @onready var size = get_node("Sprite2D").texture.get_size()
 
-signal collided
+#signal collided
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,8 +33,8 @@ func _process(delta: float) -> void:
 	
 
 
-func _on_area_area_entered(area: Area2D) -> void:
-	print(area)
-	collided.emit()
+#func _on_area_area_entered(area: Area2D) -> void:
+	#print(area.is_in_group("asteroid"))
+	#collided.emit()
 	
 	

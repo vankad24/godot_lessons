@@ -12,7 +12,7 @@ script = ExtResource("1_6mo6b")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1134253703]
 texture = ExtResource("1_akfqu")
 
-[node name="Area" type="Area2D" parent="." unique_id=2027240074]
+[node name="Area" type="Area2D" parent="." unique_id=2027240074 groups=["asteroid"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area" unique_id=720134988]
 shape = SubResource("CircleShape2D_7gti0")

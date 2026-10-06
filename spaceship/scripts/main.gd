@@ -5,15 +5,17 @@ extends Node2D
 @onready var asteroid = get_node("Asteroid")
 @onready var enemies: Node2D = $Enemies
 @onready var enemy_scene: PackedScene = preload("res://scenes/enemy.tscn")
+@onready var life_time_label = get_node("LifeTime")
 
 @onready var window = get_parent().get_window()
+
 
 var enemy_count: int = 10
 
 var rand = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	asteroid.collided.connect(player.damaged)
+	#asteroid.collided.connect(player.damaged)
 	for i in enemy_count:
 		var enemy_instance = enemy_scene.instantiate()
 		enemy_instance.scale = Vector2(0.5, 0.5)
@@ -36,6 +38,8 @@ func _process(delta: float) -> void:
 	for child in enemies.get_children():
 		#child.cohesion(enemies)
 		child.alignment(enemies)
-		
+	
+	life_time_label.text = "%d" % player.life_time
+	
 	#enemy.pursue(player.position, player.velocity)
 	

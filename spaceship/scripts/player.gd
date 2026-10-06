@@ -7,9 +7,11 @@ var max_speed: float = 500
 var velocity: Vector2 = Vector2(0, 0)
 var shield_restore_time: float = 3
 var shield_restore_left: float = 0
+var life_time: float = 0
 
 @onready var speed_label: Label = get_node("speedometer")
 @onready var shield = get_node("ship/shield")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -45,12 +47,23 @@ func _process(delta: float) -> void:
 	
 	speed_label.rotation = velocity.angle_to(Vector2(0, 1))
 	
+	life_time += delta
 	if shield_restore_left > 0:
 		shield_restore_left -= delta
 	else:
 		shield.visible = true
 	
 	
+	
 func damaged():
 	shield.visible = false
 	shield_restore_left = shield_restore_time
+	
+
+func _on_area_area_entered(area: Area2D) -> void:
+	life_time = 0
+	print("hi")
+	if area.is_in_group("asteroid"):
+		damaged()
+	elif area.is_in_group("enemy"):
+		print("enemy!")
