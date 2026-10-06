@@ -8,13 +8,13 @@ extends Node2D
 
 @onready var window = get_parent().get_window()
 
-var count: int = 50
+var enemy_count: int = 10
 
 var rand = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	asteroid.collided.connect(player.damaged)
-	for i in count:
+	for i in enemy_count:
 		var enemy_instance = enemy_scene.instantiate()
 		enemy_instance.scale = Vector2(0.5, 0.5)
 		

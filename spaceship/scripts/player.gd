@@ -5,8 +5,8 @@ var speed_step: float = 200
 var rotation_step: float = 6
 var max_speed: float = 500
 var velocity: Vector2 = Vector2(0, 0)
-var shield_restore = 3000
-var shield_restore_left = 0
+var shield_restore_time: float = 3
+var shield_restore_left: float = 0
 
 @onready var speed_label: Label = get_node("speedometer")
 @onready var shield = get_node("ship/shield")
@@ -53,4 +53,4 @@ func _process(delta: float) -> void:
 	
 func damaged():
 	shield.visible = false
-	shield_restore_left = shield_restore
+	shield_restore_left = shield_restore_time
