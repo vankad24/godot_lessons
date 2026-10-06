@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cbxou06locr41"]
+
+[ext_resource type="Texture2D" uid="uid://dkhq1bruanq8f" path="res://assets/bee.png" id="1_d7d55"]
+
+[node name="BeeScene" type="Node2D" unique_id=1831046329]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1286826981]
+texture = ExtResource("1_d7d55")

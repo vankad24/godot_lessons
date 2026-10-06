@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://pyecs5py3egm"]
+
+[ext_resource type="Texture2D" uid="uid://dmqv0pyu8jqu5" path="res://assets/fly.png" id="1_8tgio"]
+[ext_resource type="Script" uid="uid://nq87vheb1g75" path="res://scripts/noises.gd" id="1_y2ot4"]
+
+[node name="FlyScene" type="Node2D" unique_id=153062901]
+script = ExtResource("1_y2ot4")
+
+[node name="fly" type="Sprite2D" parent="." unique_id=55204439]
+texture = ExtResource("1_8tgio")

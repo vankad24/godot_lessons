@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://iyjo7y1nex38"]
+
+[ext_resource type="Texture2D" uid="uid://dh48ynkdkogl4" path="res://assets/background.jpg" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://c4ebkfkw7wa6a" path="res://scripts/main.gd" id="1_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://d4ftupd6kcbvh" path="res://scenes/player.tscn" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://cnd1xqr2ag43u" path="res://scripts/player.gd" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://cg38ms1c6moi4" path="res://scenes/asteroid.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://ya7kiyy1nq3r" path="res://scenes/enemy.tscn" id="6_tefeu"]
+
+[node name="main" type="Node2D" unique_id=146853768]
+script = ExtResource("1_tbgi4")
+
+[node name="background" type="Sprite2D" parent="." unique_id=1786250089]
+texture = ExtResource("1_o5qli")
+centered = false
+
+[node name="Asteroid" parent="." unique_id=1725832079 instance=ExtResource("4_jyhfs")]
+position = Vector2(325, 225)
+
+[node name="Player" parent="." unique_id=1861681104 instance=ExtResource("2_0wfyh")]
+position = Vector2(555, 425)
+script = ExtResource("3_sugp2")
+
+[node name="Enemy" parent="." unique_id=342714679 instance=ExtResource("6_tefeu")]
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1829779288]

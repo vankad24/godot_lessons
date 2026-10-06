@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bfs4nkqoahq5r"]
+
+[ext_resource type="Texture2D" uid="uid://bwh357qw04oag" path="res://assets/background.png" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://dgrrspyosxsv0" path="res://scripts/main.gd" id="1_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://pyecs5py3egm" path="res://scenes/fly_scene.tscn" id="3_jyhfs"]
+[ext_resource type="Script" uid="uid://cxwmbaf0ehib" path="res://scripts/fps.gd" id="3_sugp2"]
+
+[node name="Main" type="Node2D" unique_id=523557410]
+script = ExtResource("1_tbgi4")
+nflies = 20
+metadata/_edit_vertical_guides_ = [1376.0]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=224129693]
+offset_right = 800.0
+offset_bottom = 540.0
+color = Color(0.7058824, 1, 1, 1)
+
+[node name="background" type="Sprite2D" parent="." unique_id=576251236]
+texture = ExtResource("1_0wfyh")
+centered = false
+
+[node name="Label" type="Label" parent="." unique_id=221764444]
+offset_left = 346.0
+offset_top = 21.0
+offset_right = 404.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 32
+text = "FPS"
+script = ExtResource("3_sugp2")
+
+[node name="FlyScene" parent="." unique_id=153062901 instance=ExtResource("3_jyhfs")]
+position = Vector2(323, 230)
