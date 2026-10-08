@@ -24,6 +24,8 @@ position = Vector2(555, 425)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1829779288]
 
+[node name="CircleEnemy" parent="." unique_id=103026284 instance=ExtResource("6_tefeu")]
+
 [node name="LifeTime" type="Label" parent="." unique_id=1381960239]
 offset_left = 974.0
 offset_top = 6.0

@@ -6,6 +6,8 @@ extends Node2D
 @onready var enemies: Node2D = $Enemies
 @onready var enemy_scene: PackedScene = preload("res://scenes/enemy.tscn")
 @onready var life_time_label = get_node("LifeTime")
+@onready var circle_enemy = get_node("CircleEnemy")
+
 
 @onready var window = get_parent().get_window()
 
@@ -39,6 +41,7 @@ func _process(delta: float) -> void:
 		#child.cohesion(enemies)
 		child.alignment(enemies)
 	
+	circle_enemy.circle(player.position, 150)
 	life_time_label.text = "%d" % player.life_time
 	
 	#enemy.pursue(player.position, player.velocity)

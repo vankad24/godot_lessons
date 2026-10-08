@@ -151,3 +151,16 @@ func alignment(group: Node2D):
 		var steering = mean_velocity - velocity
 		
 		apply_force(steering.limit_length(max_force))
+
+func circle(center: Vector2, radius: float):
+	var direction = position - center
+	var angle = direction.angle()
+	var point_on_circle = center + Vector2.from_angle(angle) * radius
+	
+	#касательная
+	var tangent = (point_on_circle - center).rotated(PI / 2)
+	var target = point_on_circle + tangent
+	
+	seek(target)
+	
+	
