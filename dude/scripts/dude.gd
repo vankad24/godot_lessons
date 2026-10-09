@@ -1,11 +1,28 @@
 extends Node2D
 
-@onready var animation = $AnimationPlayer
+@onready var animation: AnimationPlayer = $AnimationPlayer
+@onready var sprite: Sprite2D = $Sprite2D
 
+var state = "idle"
 
 func _ready() -> void:
-	animation.play("idle")
+	pass	
+	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
+
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_pressed("ui_up"):
+		state="jump"
+	elif Input.is_action_pressed("ui_down"):
+		pass
+	elif Input.is_action_pressed("ui_left"):
+		state="walk"
+		sprite.flip_h = true
+	elif Input.is_action_pressed("ui_right"):
+		state="walk"
+		sprite.flip_h = false
+	else:
+		state="idle"
+	animation.play(state)
+		
