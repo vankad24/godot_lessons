@@ -148,13 +148,21 @@ _data = {
 &"walk": SubResource("Animation_ff63b")
 }
 
-[node name="Dude" type="Node2D" unique_id=1073022774]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7gti0"]
+radius = 9.0
+height = 26.0
+
+[node name="Dude" type="CharacterBody2D" unique_id=92605512]
 scale = Vector2(3, 3)
 script = ExtResource("1_ke1di")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1145436952]
-texture = ExtResource("2_4k5av")
-hframes = 6
+texture = ExtResource("1_hkfyu")
+hframes = 11
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=377508062]
 libraries/ = SubResource("AnimationLibrary_ff63b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2011084454]
+position = Vector2(0, 3.3333335)
+shape = SubResource("CapsuleShape2D_7gti0")
