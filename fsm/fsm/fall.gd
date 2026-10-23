@@ -10,9 +10,8 @@ const SPEED = 300.0
 
 
 func enter():
-	
 	sprite.play("fall")
-	pass
+	
 	
 func update(delta: float):
 	var direction := Input.get_axis("ui_left", "ui_right")
@@ -26,9 +25,6 @@ func update(delta: float):
 	if player.is_on_floor():
 		transition.emit(self, "idle")
 
-	#if Input.get_axis("ui_left", "ui_right"):
-		#transition.emit(self, "walk")
-	pass
 	
 func exit():
 	player.velocity.x = move_toward(player.velocity.x, 0, SPEED)

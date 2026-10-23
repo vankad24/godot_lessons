@@ -13,3 +13,8 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	
 	move_and_slide()
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("slime"):
+		pass

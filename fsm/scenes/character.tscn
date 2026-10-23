@@ -260,7 +260,9 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1sea3"]
 radius = 11.0
-height = 32.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7gti0"]
+radius = 11.0
 
 [node name="Character" type="CharacterBody2D" unique_id=495838473]
 script = ExtResource("1_dp8ca")
@@ -274,6 +276,12 @@ frame_progress = 0.94309425
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1156021018]
 position = Vector2(1, 0)
 shape = SubResource("CapsuleShape2D_1sea3")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=2051594134 groups=["player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=263026982]
+position = Vector2(1, 0)
+shape = SubResource("CapsuleShape2D_7gti0")
 
 [node name="fsm" type="Node" parent="." unique_id=2040247919 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_dp8ca")
@@ -303,3 +311,5 @@ player = NodePath("../..")
 script = ExtResource("12_7eonc")
 sprite = NodePath("../../AnimatedSprite2D")
 player = NodePath("../..")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
