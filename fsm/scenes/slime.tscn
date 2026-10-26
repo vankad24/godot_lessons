@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://meyqadk683gs" path="res://assets/slime/slime-idle.png" id="1_371uh"]
 [ext_resource type="Script" uid="uid://ci4cscnelfxlh" path="res://scripts/slime.gd" id="1_p2gj0"]
 [ext_resource type="Texture2D" uid="uid://brvbdaglech3e" path="res://assets/slime/slime-particles.png" id="2_n6pvg"]
+[ext_resource type="Script" uid="uid://d2hymnvllvkt8" path="res://fsm/fsm.gd" id="4_2npkn"]
+[ext_resource type="Script" uid="uid://1qt4m1ugid0k" path="res://fsm/slime/idle.gd" id="5_2npkn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a02ik"]
 atlas = ExtResource("2_n6pvg")
@@ -130,5 +132,16 @@ frame_progress = 0.18095438
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1274344065]
 shape = SubResource("CircleShape2D_7gti0")
+
+[node name="fsm" type="Node" parent="." unique_id=1287925866 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("4_2npkn")
+initial_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="fsm" unique_id=1132287224]
+script = ExtResource("5_2npkn")
+
+[node name="walk" type="Node" parent="fsm" unique_id=867479205]
+
+[node name="dead" type="Node" parent="fsm" unique_id=69335524]
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

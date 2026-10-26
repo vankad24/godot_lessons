@@ -6,12 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://cfgyq8ftyw7lx" path="res://assets/dude/run.png" id="2_lrhn5"]
 [ext_resource type="Texture2D" uid="uid://bv0asrty8887y" path="res://assets/dude/fall.png" id="3_2hyy3"]
 [ext_resource type="Script" uid="uid://d2hymnvllvkt8" path="res://fsm/fsm.gd" id="4_dp8ca"]
-[ext_resource type="Script" uid="uid://b5mm48yey1v3k" path="res://fsm/idle.gd" id="4_my7n2"]
+[ext_resource type="Script" uid="uid://b5mm48yey1v3k" path="res://fsm/player/idle.gd" id="4_my7n2"]
 [ext_resource type="Texture2D" uid="uid://bi3fomubwd3ed" path="res://assets/dude/jump.png" id="5_irmqu"]
-[ext_resource type="Script" uid="uid://bxcqhk51owts8" path="res://fsm/walk.gd" id="6_0lw5n"]
-[ext_resource type="Script" uid="uid://dvpgt6x6wirou" path="res://fsm/jump.gd" id="10_2hyy3"]
-[ext_resource type="Script" uid="uid://b6ajknv2rpogq" path="res://fsm/fall.gd" id="11_irmqu"]
-[ext_resource type="Script" uid="uid://dl6q4n31vw8c6" path="res://fsm/double_jump.gd" id="12_7eonc"]
+[ext_resource type="Script" uid="uid://bxcqhk51owts8" path="res://fsm/player/walk.gd" id="6_0lw5n"]
+[ext_resource type="Script" uid="uid://dvpgt6x6wirou" path="res://fsm/player/jump.gd" id="10_2hyy3"]
+[ext_resource type="Script" uid="uid://b6ajknv2rpogq" path="res://fsm/player/fall.gd" id="11_irmqu"]
+[ext_resource type="Script" uid="uid://dl6q4n31vw8c6" path="res://fsm/player/double_jump.gd" id="12_7eonc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2y1m1"]
 atlas = ExtResource("2_0dpix")
@@ -265,6 +265,7 @@ radius = 11.0
 radius = 11.0
 
 [node name="Character" type="CharacterBody2D" unique_id=495838473]
+scale = Vector2(2, 2)
 script = ExtResource("1_dp8ca")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=227671248]
