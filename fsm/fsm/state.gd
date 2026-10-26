@@ -1,14 +1,27 @@
 extends Node
-
 class_name State
 
-signal transition
+signal transition(
+	old_state: State,
+	new_state_name: String
+)
 
-func enter():
+var actor: Node
+var sprite: AnimatedSprite2D
+var state_machine: FSM
+
+
+func enter() -> void:
 	pass
 
-func exit():
+
+func exit() -> void:
 	pass
-	
-func update(delta: float):
+
+
+func update(delta: float) -> void:
+	pass
+
+
+func physics_update(delta: float) -> void:
 	pass

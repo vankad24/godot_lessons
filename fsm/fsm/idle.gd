@@ -2,11 +2,6 @@ extends State
 
 class_name Idle
 
-@export var sprite: AnimatedSprite2D
-@export var player: CharacterBody2D
-
-
-
 func enter():
 	sprite.play("idle")
 	
@@ -15,5 +10,5 @@ func update(delta: float):
 		transition.emit(self, "walk")
 	
 		# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and player.is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and actor.is_on_floor():
 		transition.emit(self, "jump")

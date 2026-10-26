@@ -287,29 +287,19 @@ shape = SubResource("CapsuleShape2D_7gti0")
 script = ExtResource("4_dp8ca")
 initial_state = NodePath("idle")
 
-[node name="idle" type="Node" parent="fsm" unique_id=1975515994 node_paths=PackedStringArray("sprite", "player")]
+[node name="idle" type="Node" parent="fsm" unique_id=1975515994]
 script = ExtResource("4_my7n2")
-sprite = NodePath("../../AnimatedSprite2D")
-player = NodePath("../..")
 
-[node name="walk" type="Node" parent="fsm" unique_id=1652392968 node_paths=PackedStringArray("sprite", "player")]
+[node name="walk" type="Node" parent="fsm" unique_id=1652392968]
 script = ExtResource("6_0lw5n")
-sprite = NodePath("../../AnimatedSprite2D")
-player = NodePath("../..")
 
-[node name="jump" type="Node" parent="fsm" unique_id=327036850 node_paths=PackedStringArray("sprite", "player")]
+[node name="jump" type="Node" parent="fsm" unique_id=327036850]
 script = ExtResource("10_2hyy3")
-sprite = NodePath("../../AnimatedSprite2D")
-player = NodePath("../..")
 
-[node name="fall" type="Node" parent="fsm" unique_id=1117554501 node_paths=PackedStringArray("sprite", "player")]
+[node name="fall" type="Node" parent="fsm" unique_id=1117554501]
 script = ExtResource("11_irmqu")
-sprite = NodePath("../../AnimatedSprite2D")
-player = NodePath("../..")
 
-[node name="double_jump" type="Node" parent="fsm" unique_id=365849492 node_paths=PackedStringArray("sprite", "player")]
+[node name="double_jump" type="Node" parent="fsm" unique_id=365849492]
 script = ExtResource("12_7eonc")
-sprite = NodePath("../../AnimatedSprite2D")
-player = NodePath("../..")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

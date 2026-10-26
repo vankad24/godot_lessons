@@ -123,7 +123,8 @@ script = ExtResource("1_p2gj0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1169630805]
 sprite_frames = SubResource("SpriteFrames_aulb5")
-animation = &"idle"
+animation = &"dead"
+frame_progress = 0.18095438
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=329650783 groups=["slime"]]
 

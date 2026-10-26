@@ -3,10 +3,6 @@ extends State
 class_name Walk
 
 
-@export var sprite: AnimatedSprite2D
-@export var player: CharacterBody2D
-const SPEED = 300.0
-
 func enter():
 	#player = get_tree().get_first_node_in_group('Character')
 	sprite.play("run")
@@ -17,6 +13,8 @@ func _process(delta: float) -> void:
 	pass
 
 func update(delta: float):
+	var player = actor as CharacterBody2D
+
 	if Input.is_action_just_pressed("ui_accept") and player.is_on_floor():
 		transition.emit(self, "jump")
 	
@@ -26,8 +24,7 @@ func update(delta: float):
 		transition.emit(self, "idle")
 	
 	if direction:
-		player.velocity.x = direction * SPEED
-		sprite.flip_h = direction < 0
+		player.move(direction)
 	else:
 		# плавная остановка
-		player.velocity.x = move_toward(player.velocity.x, 0, SPEED)
+		player.stop()
