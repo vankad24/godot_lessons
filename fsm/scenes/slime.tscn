@@ -117,16 +117,22 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_aulb5"]
+radius = 11.045361
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_7gti0"]
 radius = 11.661903
 
-[node name="Slime" type="Node2D" unique_id=331418482]
+[node name="Slime" type="CharacterBody2D" unique_id=615684768]
 script = ExtResource("1_p2gj0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1169630805]
 sprite_frames = SubResource("SpriteFrames_aulb5")
 animation = &"dead"
 frame_progress = 0.18095438
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1442386511]
+shape = SubResource("CircleShape2D_aulb5")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=329650783 groups=["slime"]]
 

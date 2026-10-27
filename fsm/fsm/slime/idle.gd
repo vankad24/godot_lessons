@@ -1,6 +1,5 @@
 extends State
 
-class_name IdleSlime
 
 func enter():
 	sprite.play("idle")
