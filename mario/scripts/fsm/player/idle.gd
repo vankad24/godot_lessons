@@ -1,7 +1,7 @@
 extends State
 
 func enter():
-	sprite.play("idle")
+	actor.sprite.play("idle")
 	
 func update(delta: float):
 	if Input.get_axis("ui_left", "ui_right"):

@@ -7,18 +7,15 @@ class_name FSM
 var states: Dictionary = {}
 var current_state: State
 var actor: Node
-var sprite: AnimatedSprite2D
-
 
 func _ready() -> void:
+	await get_parent().ready # wait root node to finish init and @onready
 	actor = get_parent()
-	sprite = actor.get_node("AnimatedSprite2D")
-
+	
 	for child in get_children():
 		if child is State:
 			states[child.name.to_lower()] = child
 			child.actor = actor
-			child.sprite = sprite
 			child.state_machine = self
 			child.transition.connect(change_state)
 
