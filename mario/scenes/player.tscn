@@ -1,3 +1,27 @@
 [gd_scene format=3 uid="uid://c6qn7pyfgj16s"]
 
-[node name="Player" type="Node2D" unique_id=1014474348]
+[ext_resource type="Script" uid="uid://c7m8814h75y37" path="res://scripts/fsm/fsm.gd" id="1_qhqgy"]
+[ext_resource type="Script" uid="uid://cjgoddes56far" path="res://scripts/fsm/player/idle.gd" id="2_dqkch"]
+[ext_resource type="Script" uid="uid://53sysvh2q2ac" path="res://scripts/fsm/player/walk.gd" id="3_qlg0r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7gti0"]
+
+[node name="Player" type="CharacterBody2D" unique_id=935870915]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1231965940]
+sprite_frames = SubResource("SpriteFrames_7gti0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=312023184]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1934370526]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1360695206]
+
+[node name="fsm" type="Node" parent="." unique_id=1938070189]
+script = ExtResource("1_qhqgy")
+
+[node name="idle" type="Node" parent="fsm" unique_id=944090878]
+script = ExtResource("2_dqkch")
+
+[node name="walk" type="Node" parent="fsm" unique_id=2078888416]
+script = ExtResource("3_qlg0r")
