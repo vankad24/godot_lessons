@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cfgyq8ftyw7lx" path="res://assets/dude/run.png" id="1_hkfyu"]
 [ext_resource type="Texture2D" uid="uid://dp8kkar0krgfq" path="res://assets/dude/idle.png" id="2_ke1di"]
 [ext_resource type="Texture2D" uid="uid://dqlnggoikdigg" path="res://assets/dude/double_jump.png" id="3_oeu1o"]
+[ext_resource type="AudioStream" uid="uid://cukilmsfcgwrx" path="res://assets/audio/step.ogg" id="5_ff63b"]
 
 [sub_resource type="Animation" id="Animation_ke1di"]
 length = 0.001
@@ -191,3 +192,7 @@ speed_scale = 1.565
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=144105350]
 position = Vector2(1.5, 1.5)
 shape = SubResource("CapsuleShape2D_7yyre")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1192620528]
+stream = ExtResource("5_ff63b")
+bus = &"SFX"

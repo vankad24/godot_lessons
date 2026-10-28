@@ -4,6 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://cqrtgdyxpr6p2" path="res://scenes/dude.tscn" id="2_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://43j23eo6y3bu" path="res://assets/box.png" id="3_sugp2"]
 [ext_resource type="Texture2D" uid="uid://o26ndt61at5v" path="res://assets/jump_box.png" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://blaijgct3bhvb" path="res://scenes/rock.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://bl3un6wfrfnu1" path="res://scenes/box.tscn" id="6_tefeu"]
+[ext_resource type="AudioStream" uid="uid://bvvaddrnxomrd" path="res://assets/audio/background.ogg" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://c72teyb5mdxio" path="res://scenes/fan.tscn" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://d261j6oad4gl2" path="res://scenes/button.tscn" id="9_85g3d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7yyre"]
 size = Vector2(1156.25, 15)
@@ -65,3 +70,23 @@ shape = SubResource("RectangleShape2D_uvqyy")
 [node name="Sprite2D" type="Sprite2D" parent="jumpBox" unique_id=1366030190]
 scale = Vector2(2, 2)
 texture = ExtResource("4_jyhfs")
+
+[node name="Rock" parent="." unique_id=1270652393 instance=ExtResource("5_tbgi4")]
+position = Vector2(348, 431)
+
+[node name="Box2" parent="." unique_id=675593998 instance=ExtResource("6_tefeu")]
+position = Vector2(195, 149)
+
+[node name="Box" parent="." unique_id=1957405517 instance=ExtResource("6_tefeu")]
+position = Vector2(439.00003, 319)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1166997616]
+stream = ExtResource("7_o6xl0")
+autoplay = true
+
+[node name="Fan" parent="." unique_id=1873043150 instance=ExtResource("8_tipki")]
+position = Vector2(585, 514)
+
+[node name="Button" parent="." unique_id=145526748 instance=ExtResource("9_85g3d")]
+position = Vector2(340, 542)
+node_path = NodePath("../Fan")
