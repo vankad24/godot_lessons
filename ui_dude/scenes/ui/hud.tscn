@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dy0br3fx20rgn"]
+
+[ext_resource type="Script" uid="uid://cm1pm262m4324" path="res://scenes/ui/hud.gd" id="1_hqnrr"]
+[ext_resource type="Texture2D" uid="uid://2btsk7y2pb0" path="res://assets/ui/close.png" id="2_bo48s"]
+
+[node name="Hud" type="Node2D" unique_id=1272207879]
+script = ExtResource("1_hqnrr")
+health_texture = ExtResource("2_bo48s")
+
+[node name="Panel" type="Panel" parent="." unique_id=1827436606]
+offset_right = 357.0
+offset_bottom = 176.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=773180389]
+layout_mode = 0
+offset_right = 346.0
+offset_bottom = 167.0

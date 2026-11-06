@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c21q88x7flb2c"]
+[gd_scene format=3 uid="uid://c21q88x7flb2c"]
 
 [ext_resource type="Script" uid="uid://c1qomp53qc5su" path="res://scripts/physics_dude_fsm.gd" id="1_e15is"]
 [ext_resource type="Texture2D" uid="uid://bms0wxihi8f0v" path="res://assets/dude/idle.png" id="1_v1x5w"]
@@ -207,35 +207,34 @@ _data = {
 radius = 19.0
 height = 60.0
 
-[node name="PhysicsDude" type="CharacterBody2D"]
+[node name="PhysicsDude" type="CharacterBody2D" unique_id=900231841]
 process_mode = 1
+z_index = 1
 script = ExtResource("1_e15is")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1148981299]
 scale = Vector2(2, 2)
 texture = ExtResource("1_v1x5w")
 hframes = 11
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
-libraries = {
-&"": SubResource("AnimationLibrary_opnw3")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=615406045]
+libraries/ = SubResource("AnimationLibrary_opnw3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=145004722]
 position = Vector2(1, 3)
 shape = SubResource("CapsuleShape2D_uy56r")
 
-[node name="JumpPlayer" type="AudioStreamPlayer" parent="."]
+[node name="JumpPlayer" type="AudioStreamPlayer" parent="." unique_id=1753172409]
 stream = ExtResource("6_2ssbm")
 bus = &"SFX"
 
-[node name="StepPlayer" type="AudioStreamPlayer" parent="."]
+[node name="StepPlayer" type="AudioStreamPlayer" parent="." unique_id=570936945]
 stream = ExtResource("7_rhgci")
 pitch_scale = 1.2
 parameters/looping = true
 
-[node name="AudioListener2D" type="AudioListener2D" parent="."]
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=675669850]
 current = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1095361225]
 enabled = false

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bq75x2ya4wf6a"]
+
+[ext_resource type="Theme" uid="uid://d4mojps3h61fc" path="res://scenes/themes/menu_item.tres" id="1_7w7rl"]
+
+[node name="Menu" type="Node2D" unique_id=1320563810]
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1277561821]
+offset_right = 1151.0
+offset_bottom = 645.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1900040934]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=353099288]
+layout_mode = 2
+theme = ExtResource("1_7w7rl")
+text = "Pause"
