@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bvvaddrnxomrd" path="res://assets/audio/background.ogg" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://c72teyb5mdxio" path="res://scenes/fan.tscn" id="8_tipki"]
 [ext_resource type="PackedScene" uid="uid://d261j6oad4gl2" path="res://scenes/button.tscn" id="9_85g3d"]
+[ext_resource type="PackedScene" uid="uid://3uyhmp88u5a2" path="res://scenes/fire_trap.tscn" id="9_choun"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7yyre"]
 size = Vector2(1156.25, 15)
@@ -83,9 +84,13 @@ position = Vector2(439.00003, 319)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1166997616]
 stream = ExtResource("7_o6xl0")
 autoplay = true
+bus = &"Music"
 
 [node name="Fan" parent="." unique_id=1873043150 instance=ExtResource("8_tipki")]
 position = Vector2(585, 514)
+
+[node name="FireTrap" parent="." unique_id=1487063102 instance=ExtResource("9_choun")]
+position = Vector2(871.00006, 523)
 
 [node name="Button" parent="." unique_id=145526748 instance=ExtResource("9_85g3d")]
 position = Vector2(340, 542)

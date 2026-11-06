@@ -99,7 +99,9 @@ shape = SubResource("RectangleShape2D_fpj8u")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1488844813]
 stream = ExtResource("3_05mpp")
+max_distance = 495.0
 bus = &"SFX"
+parameters/looping = true
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1229278122]
 modulate = Color(1, 1, 1, 0.17254902)

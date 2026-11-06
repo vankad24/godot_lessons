@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y += GRAVITY * delta
 	
 	var direction = Input.get_axis("left", "right")
-	if bounce_delay <= 0:
+	if bounce_delay <= 0 and direction:
 		velocity.x = direction * SPEED	
 	
 	if Input.is_action_just_pressed("up"):

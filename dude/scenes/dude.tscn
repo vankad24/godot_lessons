@@ -196,3 +196,7 @@ shape = SubResource("CapsuleShape2D_7yyre")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1192620528]
 stream = ExtResource("5_ff63b")
 bus = &"SFX"
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1790769111]
+scale = Vector2(0.5, 0.5)
+current = true
