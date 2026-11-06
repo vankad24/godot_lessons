@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dje10nyjivpmf"]
+
+[ext_resource type="PackedScene" uid="uid://chqfh8lreg11e" path="res://scenes/levels/training_level.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://c21q88x7flb2c" path="res://scenes/characters/physics_dude.tscn" id="3_jyhfs"]
+
+[node name="Main" type="Node2D" unique_id=1093662605]
+process_mode = 3
+
+[node name="Training level" parent="." unique_id=1144610485 instance=ExtResource("1_o5qli")]
+
+[node name="PhysicsDude" parent="." unique_id=1974107632 instance=ExtResource("3_jyhfs")]
+position = Vector2(323, 260)
+
+[connection signal="tree_exiting" from="." to="." method="save_settings"]
