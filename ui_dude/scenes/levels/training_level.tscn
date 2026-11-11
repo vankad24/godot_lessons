@@ -190,6 +190,7 @@ size = Vector2(254.75, 10)
 size = Vector2(1165, 20)
 
 [node name="Training level" type="Node2D" unique_id=158054389]
+process_mode = 1
 script = ExtResource("1_y70w4")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1865035160]

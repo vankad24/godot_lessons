@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bq75x2ya4wf6a"]
 
 [ext_resource type="Theme" uid="uid://d4mojps3h61fc" path="res://scenes/themes/menu_item.tres" id="1_7w7rl"]
+[ext_resource type="Script" uid="uid://cu3mqvuevhfsy" path="res://scenes/ui/menu.gd" id="1_wedc3"]
 
 [node name="Menu" type="Node2D" unique_id=1320563810]
+script = ExtResource("1_wedc3")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1277561821]
 offset_right = 1151.0
@@ -15,3 +17,32 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("1_7w7rl")
 text = "Pause"
+
+[node name="Resume" type="Button" parent="CenterContainer/VBoxContainer" unique_id=264162131]
+layout_mode = 2
+theme = ExtResource("1_7w7rl")
+text = "Resume"
+
+[node name="Exit" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1838102027]
+layout_mode = 2
+theme = ExtResource("1_7w7rl")
+text = "Exit"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=914032743]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=2101539645]
+layout_mode = 2
+theme = ExtResource("1_7w7rl")
+theme_override_font_sizes/font_size = 20
+text = "Volume"
+
+[node name="HSlider" type="HSlider" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=761242930]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.05
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Resume" to="." method="_unpause"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Exit" to="." method="_on_exit"]
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/HBoxContainer/HSlider" to="." method="_on_volume_changed"]
