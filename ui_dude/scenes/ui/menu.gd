@@ -15,11 +15,11 @@ func _on_volume_changed(value: float):
 	AudioServer.set_bus_volume_linear(bus, value)
 
 func get_settings():
-	var settings: Dictionary = {"valume":slider.value}
+	var settings: Dictionary = {"volume":slider.value}
 	return settings
 	
 func load_settings(settings: Dictionary):
-	var volume = settings.get("valume", 1)
+	var volume = settings.get("volume", 1)
 	slider.value = volume
 
 func _ready() -> void:
