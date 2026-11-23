@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://ch0nn5otttm2l"]
+
+[ext_resource type="Texture2D" uid="uid://dy6rf3t4d4dxd" path="res://assets/parallax/parallax-mountain-bg.png" id="1_sk3ls"]
+[ext_resource type="Script" uid="uid://brxkm0xho1uc1" path="res://scenes/levels/infinity.gd" id="1_yi1a4"]
+[ext_resource type="Texture2D" uid="uid://c73s0jgnxlksg" path="res://assets/parallax/parallax-mountain-montain-far.png" id="2_0lati"]
+[ext_resource type="AudioStream" uid="uid://decg16iayc54a" path="res://audio/background_2.ogg" id="2_5thiy"]
+[ext_resource type="PackedScene" uid="uid://bgjdjq3i5fjp4" path="res://scenes/items/platform.tscn" id="2_sackq"]
+[ext_resource type="Texture2D" uid="uid://di5uftgri0ttj" path="res://assets/parallax/parallax-mountain-mountains.png" id="3_yi1a4"]
+[ext_resource type="Texture2D" uid="uid://ce4xduhk0fjt3" path="res://assets/parallax/parallax-mountain-trees.png" id="4_sackq"]
+[ext_resource type="Texture2D" uid="uid://0kris3x5voa8" path="res://assets/parallax/parallax-mountain-foreground-trees.png" id="5_3d317"]
+
+[node name="Infinity" type="Node2D" unique_id=605547970]
+script = ExtResource("1_yi1a4")
+platform_scene = ExtResource("2_sackq")
+
+[node name="Background" type="Node2D" parent="." unique_id=2099460337]
+
+[node name="Parallax2D" type="Parallax2D" parent="Background" unique_id=1133015745]
+scroll_scale = Vector2(0, 0)
+repeat_size = Vector2(1152, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D" unique_id=255343622]
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("1_sk3ls")
+centered = false
+
+[node name="Parallax2D2" type="Parallax2D" parent="Background" unique_id=1475181186]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(1152, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D2" unique_id=32151530]
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("2_0lati")
+centered = false
+
+[node name="Parallax2D3" type="Parallax2D" parent="Background" unique_id=1863902741]
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(1152, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D3" unique_id=1189027860]
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_yi1a4")
+centered = false
+
+[node name="Parallax2D4" type="Parallax2D" parent="Background" unique_id=1025994677]
+repeat_size = Vector2(1152, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D4" unique_id=1049752957]
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("4_sackq")
+centered = false
+
+[node name="Parallax2D5" type="Parallax2D" parent="Background" unique_id=411331931]
+repeat_size = Vector2(1152, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D5" unique_id=45712677]
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("5_3d317")
+centered = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=704433065]
+stream = ExtResource("2_5thiy")
+
+[node name="Spawn" type="Marker2D" parent="." unique_id=1747559798]
+position = Vector2(246, 138)
+
+[node name="Platforms" type="Node2D" parent="." unique_id=423306780]

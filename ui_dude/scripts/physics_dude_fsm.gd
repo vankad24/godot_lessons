@@ -134,30 +134,31 @@ func handle_collisions(delta):
 	for i in collision_count:
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
-		if "Wall" in collider.name:
-			var normal = collision.get_normal()
-			if abs(normal.x) > 0.8:
-				velocity = normal * SPEED
-				bounce_delay = STUN_TIME
-				set_state(State.STUN)
-		if "StaticBox" in collider.name:
-			var normal = collision.get_normal()
-			if normal.y > 0.8:
-				hit.emit()
-				velocity = normal * 4 * SPEED
-				set_state(State.JUMP)
-		if "JumpBox" in collider.name:
-			var normal = collision.get_normal()
-			if normal.y < -0.8:
-				bump.emit()
-				velocity.y = normal.y * SPEED * 2
-				set_state(State.JUMP)
-		if "Bridge" in collider.name:
-			current_platform = collider
-		if "Rock" in collider.name:
-			var normal = collision.get_normal()
-			collider.apply_impulse(-normal * 10)
-		
+		if collider:
+			if "Wall" in collider.name:
+				var normal = collision.get_normal()
+				if abs(normal.x) > 0.8:
+					velocity = normal * SPEED
+					bounce_delay = STUN_TIME
+					set_state(State.STUN)
+			if "StaticBox" in collider.name:
+				var normal = collision.get_normal()
+				if normal.y > 0.8:
+					hit.emit()
+					velocity = normal * 4 * SPEED
+					set_state(State.JUMP)
+			if "JumpBox" in collider.name:
+				var normal = collision.get_normal()
+				if normal.y < -0.8:
+					bump.emit()
+					velocity.y = normal.y * SPEED * 2
+					set_state(State.JUMP)
+			if "Bridge" in collider.name:
+				current_platform = collider
+			if "Rock" in collider.name:
+				var normal = collision.get_normal()
+				collider.apply_impulse(-normal * 10)
+			
 	if Input.is_action_just_pressed("down") and current_platform != null:
 		var collision = current_platform.get_child(0)
 		collision.disabled = true
