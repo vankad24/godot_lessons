@@ -4,11 +4,12 @@ var camera: Camera2D
 var player: CharacterBody2D
 
 @onready var platforms = $Platforms
+@onready var spawn = $Spawn
 
 @export var platform_scene: PackedScene
 @export var offscreen_distance: float = 300
 @export var min_gap: float = 50
-@export var max_gap: float = 150
+@export var max_gap: float = 100
 @export var min_y: float = 300
 @export var max_y: float = 500
 
@@ -37,10 +38,12 @@ func create_platform(x: float):
 
 func _ready() -> void:
 	difficulty = 1
+	create_platform(spawn.position.x)
+	right_x = spawned[-1].position.x
 
 
 func _process(delta: float) -> void:
-	print("Platforms ", spawned.size())
+	#print("Platforms ", spawned.size())
 	var screen_size = get_viewport_rect().size
 	var camera_pos = camera.global_position
 	var half_w = screen_size.x / 2
