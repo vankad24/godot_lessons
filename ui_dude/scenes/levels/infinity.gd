@@ -2,6 +2,7 @@ extends Node2D
 
 var camera: Camera2D
 var player: CharacterBody2D
+var hud: Node2D
 
 @onready var platforms = $Platforms
 @onready var spawn = $Spawn
@@ -60,6 +61,17 @@ func _process(delta: float) -> void:
 			platform.queue_free()
 			spawned.remove_at(i)
 			
-	
-	
+	if player.position.y > screen_size.y:
+		player_die()
+
+func player_die():
+	if hud.current_health > 0:
+		hud.current_health -= 1
+		for i in range(spawned.size()):
+			var platform = spawned[i]
+			if platform.position.x > 0:
+				player.position.x = platform.position.x
+				player.position.y = platform.position.y - 100
+				break
+				
 	

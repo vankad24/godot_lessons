@@ -11,19 +11,17 @@ var player = null
 @onready var world = $World
 @onready var player_scene = preload("res://scenes/characters/physics_dude.tscn")
 @onready var menu = $UI/Menu
+@onready var hud = $UI/Hud
+
 
 
 func _ready() -> void:
 	player = player_scene.instantiate()
-	
-	load_level("training")
 	add_child(player)
 	
 	menu.update_levels(levels.keys())
 	load_level(levels.keys()[0])
 	menu.level_changed.connect(load_level)
-	
-	print(current_level.get_node("Spawn").global_position)	
 	
 	load_settings()
 	
@@ -49,6 +47,7 @@ func load_level(name):
 			camera.limit_top = 0
 			current_level.camera = camera
 			current_level.player = player
+			current_level.hud = hud
 			
 		
 	

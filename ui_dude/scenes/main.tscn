@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://dy0br3fx20rgn" path="res://scenes/ui/hud.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://bq75x2ya4wf6a" path="res://scenes/ui/menu.tscn" id="3_sugp2"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sugp2"]
+load_path = "res://.godot/imported/close.png-76ad351b77a5cd8dfb1d712106bc5926.ctex"
+
 [node name="Main" type="Node2D" unique_id=1093662605]
 process_mode = 3
 script = ExtResource("1_0wfyh")
@@ -13,6 +16,7 @@ script = ExtResource("1_0wfyh")
 [node name="UI" type="CanvasLayer" parent="." unique_id=3613161]
 
 [node name="Hud" parent="UI" unique_id=1272207879 instance=ExtResource("1_o5qli")]
+health_texture = SubResource("CompressedTexture2D_sugp2")
 
 [node name="Menu" parent="UI" unique_id=1320563810 instance=ExtResource("3_sugp2")]
 visible = false

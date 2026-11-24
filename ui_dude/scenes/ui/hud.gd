@@ -4,14 +4,16 @@ extends Node2D
 @export var max_health: int = 5
 @export var health_texture: Texture2D
 
-var current_helth: int = max_health:
+var current_health: int = max_health:
 	set(value):
-		current_helth=value
+		current_health=value
 		update_health()
 
+func restore():
+	current_health = max_health
 
 func _ready() -> void:
-	update_health()
+	restore()
 
 func update_health():
 	var container: HBoxContainer = $Panel/HBoxContainer
@@ -19,7 +21,7 @@ func update_health():
 		for child in container.get_children():
 			child.queue_free()
 		
-		for i in max_health:
+		for i in current_health:
 			var health = TextureRect.new()
 			health.texture = health_texture
 			health.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT

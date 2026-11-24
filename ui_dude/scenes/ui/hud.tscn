@@ -4,12 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://2btsk7y2pb0" path="res://assets/ui/close.png" id="2_bo48s"]
 
 [node name="Hud" type="Node2D" unique_id=1272207879]
+scale = Vector2(2, 2)
 script = ExtResource("1_hqnrr")
 health_texture = ExtResource("2_bo48s")
 
 [node name="Panel" type="Panel" parent="." unique_id=1827436606]
-offset_right = 357.0
-offset_bottom = 176.0
+offset_right = 93.5
+offset_bottom = 18.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=773180389]
 layout_mode = 0
