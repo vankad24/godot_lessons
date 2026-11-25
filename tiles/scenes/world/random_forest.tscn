@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d1rpktchpme5x"]
+
+[ext_resource type="Script" uid="uid://d0g8yuvxdehom" path="res://scenes/world/random_forest.gd" id="1_idvus"]
+[ext_resource type="TileSet" uid="uid://jbwuodrro3sk" path="res://assets/tilesets/water.tres" id="1_n3gnq"]
+[ext_resource type="TileSet" uid="uid://ev4wd3nec5v4" path="res://assets/tilesets/ground.tres" id="2_idvus"]
+[ext_resource type="TileSet" uid="uid://d2k1r21nqgn2p" path="res://assets/tilesets/trees.tres" id="3_kvuur"]
+
+[node name="RandomForest" type="Node2D" unique_id=1713039381]
+script = ExtResource("1_idvus")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1112469530]
+
+[node name="Water" type="TileMapLayer" parent="." unique_id=1219081642]
+tile_set = ExtResource("1_n3gnq")
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=1605251411]
+tile_set = ExtResource("2_idvus")
+
+[node name="Trees" type="TileMapLayer" parent="." unique_id=674321549]
+tile_set = ExtResource("3_kvuur")
+
+[node name="Creatures" type="Node2D" parent="." unique_id=1542216870]
