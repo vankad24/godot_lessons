@@ -35,8 +35,8 @@ func load_level(name):
 		current_level.queue_free()
 	if name in levels:
 		current_level = levels[name].instantiate()
-		world.add_child(current_level)
 		player.position = current_level.get_node("Spawn").global_position
+		world.add_child(current_level)
 	var camera: Camera2D = player.get_node("Camera2D")
 	match name:
 		"training": camera.enabled = false
@@ -48,7 +48,7 @@ func load_level(name):
 			current_level.camera = camera
 			current_level.player = player
 			current_level.hud = hud
-			
+			current_level.start_game()
 		
 	
 func pause():
